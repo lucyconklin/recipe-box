@@ -7,4 +7,8 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
+    = flash[:success]
+    = link_to "Logout", "/logout", method: :delete if current_user
+    = link_to "Login", "/login" if !current_user
+    = 'admin' if current_admin?
     = yield

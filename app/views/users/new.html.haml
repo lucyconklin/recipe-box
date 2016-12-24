@@ -1,0 +1,14 @@
+= form_for @user, html: {role: "form"} do |f|
+  .form-group
+    = f.label :first_name
+    = f.text_field :first_name, {class: "form-controll"}
+  .form-group
+    = f.label :last_name
+    = f.text_field :last_name, {class: "form-controll"}
+  .form-group
+    = f.label :email
+    = f.text_field :email, {class: "form-controll"}
+  .form-group
+    = f.label :password
+    = f.text_field :password, {class: "form-controll"}
+  = f.submit "Create New User", class: "button button-submit"

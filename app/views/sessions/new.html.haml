@@ -1,1 +1,8 @@
-%h1 New Session
+= form_tag login_path do
+  = label_tag :email, 'email'
+  = text_field_tag :email, 'email'
+
+  = label_tag :password, 'password'
+  = text_field_tag :password, 'password'
+
+  = submit_tag 'Login'
