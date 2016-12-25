@@ -4,11 +4,17 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title RecipeBox
     = csrf_meta_tags
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Gentium+Basic:400,700|Open+Sans", rel="stylesheet"
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    = flash[:success]
-    = link_to "Logout", "/logout", method: :delete if current_user
-    = link_to "Login", "/login" if !current_user
-    = 'admin' if current_admin?
-    = yield
+    .flash
+      = flash[:success]
+    .wrapper
+      .log
+        = link_to "Logout", "/logout", method: :delete if current_user
+        = link_to "Login", "/login" if !current_user
+      .admin
+        = 'admin' if current_admin?
+      .main
+        = yield
