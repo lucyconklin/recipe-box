@@ -1,0 +1,7 @@
+= form_for [@user, @recipe, @ingredient] do |f|
+  .form-group
+    = f.text_field :name, class: 'form-control', placeholder: 'title'
+  .form-group
+    = f.number :amount, class: 'form-control', placeholder: 'amount'
+  .form-group
+    = f.submit 'add ingredient', class: "form-control button-submit"

@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @recipe = @user.recipes.new()
+    @recipe = @user.recipes.create()
+    @ingredient = @recipe.ingredients.build
   end
 
   def create
