@@ -8,9 +8,9 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    .flash
-      = flash[:success]
     .wrapper
+      .flash
+        = flash[:success]
       .log
         = link_to "Logout", "/logout", method: :delete if current_user
         = link_to "Login", "/login" if !current_user

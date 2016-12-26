@@ -1,8 +1,7 @@
 = form_tag login_path do
-  = label_tag :email, 'email'
-  = text_field_tag :email, 'email'
-
-  = label_tag :password, 'password'
-  = text_field_tag :password, 'password'
-
-  = submit_tag 'Login'
+  .form-group
+    = text_field_tag :email, 'email', class: "form-control", placeholder: "email"
+  .form-group
+    = text_field_tag :password, 'password', class: "form-control", placeholder: "password"
+  .form-group
+    = submit_tag 'Login', class: "form-control button-submit"
