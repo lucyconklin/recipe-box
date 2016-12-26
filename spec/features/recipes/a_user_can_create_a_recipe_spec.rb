@@ -8,7 +8,6 @@ describe "User can create a recipe" do
 
     fill_in "title", with: "Puppy Chow"
     fill_in "description", with: "best food on earth"
-    fill_in "method", with: "mix all ingredients together"
     click_on('Create new recipe')
 
     recipe = Recipe.find_by(title: "Puppy Chow")

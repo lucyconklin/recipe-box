@@ -3,5 +3,4 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :method, presence: true
 end
