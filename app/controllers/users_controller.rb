@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @recipes = @user.recipes
   end
 
   def new
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
     flash[:success] = "Successfully created account for #{user.first_name}"
     redirect_to user_path(user)
   end
-  
+
   private
 
   def user_params

@@ -1,3 +1,8 @@
 %h1
   = @user.first_name
   = @user.last_name
+
+%ul
+  - @user.recipes.each do |recipe|
+    %li
+      = recipe.title

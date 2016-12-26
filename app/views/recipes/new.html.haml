@@ -1,0 +1,11 @@
+%h1.text-center add a new recipe
+
+= form_for [@user, @recipe] do |f|
+  .form-group
+    = f.text_field :title, class: 'form-control', placeholder: 'title'
+  .form-group
+    = f.text_field :description, class: 'form-control', placeholder: 'description'
+  .form-group
+    = f.text_field :method, class: 'form-control', placeholder: 'method'
+  .form-group
+    = f.submit 'Create new recipe', class: "form-control button-submit"
