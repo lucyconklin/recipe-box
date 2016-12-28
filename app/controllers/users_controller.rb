@@ -19,6 +19,14 @@ class UsersController < ApplicationController
     redirect_to user_path(user)
   end
 
+  def destroy
+    admin = User.find(session[:user_id])
+    user = User.find(params[:id])
+    user.recipes.destroy_all
+    user.destroy
+    redirect_to admin_users_path(admin)
+  end
+
   private
 
   def user_params

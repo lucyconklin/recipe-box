@@ -5,11 +5,12 @@ class Admin::UsersController < ApplicationController
     render :error unless current_admin?
   end
 
-  def index
-
-  end
-
   def show
     @admin = User.find(params[:id])
+    @users = User.all
+  end
+
+  def index
+    @users = User.all
   end
 end
