@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'sessions#new'
 
-  resources :users, only: [:new, :show, :create] do
-    resources :recipes, only: [:new, :create, :index] do
-      resources :ingredients, only: [:new, :create]
+  resources :users, only: [:new, :show, :create, :destroy] do
+    resources :recipes, only: [:new, :create, :index, :show] do
+      resources :ingredients, only: [:new, :create, :show]
+      resources :directions, only: [:new, :create, :show]
     end
   end
 
@@ -12,6 +13,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   namespace :admin do
-    resources :users, only: [:show]
+    resources :users, only: [:show, :index]
   end
 end
