@@ -1,7 +1,7 @@
-= form_for [@user, @recipe, @ingredient] do |f|
+= form_for new_user_recipe_ingredient_path(@recipe.user, @recipe) do |f|
   .form-group
-    = f.text_field :name, class: 'form-control', placeholder: 'title'
+    = f.text_field :name, class: 'form-control', placeholder: 'name'
   .form-group
-    = f.number :amount, class: 'form-control', placeholder: 'amount'
+    = f.number_field :amount, class: 'form-control', placeholder: 'amount'
   .form-group
     = f.submit 'add ingredient', class: "form-control button-submit"

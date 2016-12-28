@@ -1,0 +1,8 @@
+%h2 Edit Users
+%ul
+  - @users.each do |user|
+    %li{:class => "user-#{user.id}"}
+      = user.first_name
+      = user.last_name
+      = link_to 'Delete', user_path(user), class: "button-delete", method: :delete if !user.admin?
+      = link_to 'Admin', '#', class: "button-disabled" if user.admin?

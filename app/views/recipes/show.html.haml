@@ -1,0 +1,9 @@
+%h1
+  = @recipe.title
+
+%h2
+  = @recipe.description
+
+= render :partial => 'recipes/ingredient'
+
+= render :partial => 'recipes/direction'
