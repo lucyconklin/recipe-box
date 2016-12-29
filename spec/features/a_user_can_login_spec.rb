@@ -14,7 +14,7 @@ describe "User visits login page" do
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Successfully logged in")
     expect(page).to have_content("#{user.first_name}")
-    expect(page).to have_content("Logout")
+    expect(page).to have_content("logout")
   end
 
   scenario "a user can login as an admin" do

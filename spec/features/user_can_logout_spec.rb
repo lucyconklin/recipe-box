@@ -11,7 +11,7 @@ describe "User visits login page" do
       click_on "Login"
     end
 
-    click_on "Logout"
+    click_on "logout"
 
     expect(page).to have_content("Successfully logged out")
     expect(page).to have_button("Login")
