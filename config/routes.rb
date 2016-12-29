@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'pages#index'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 
   resources :users, only: [:new, :show, :create, :destroy] do
     resources :recipes, only: [:new, :create, :index, :show] do

@@ -1,0 +1,14 @@
+%div{ class: "navbar" }
+  %div{ class: "pull-left" }
+    = link_to "Recipe Box", root_path, class: "navbar-nav"
+  %div{ class:"log" }
+    = link_to "logout", "/logout", class: "navbar-nav", method: :delete if current_user
+    = link_to "login", "/login", class: "navbar-nav" if !current_user
+  %div{ class:"admin" }
+    = link_to 'admin', "/admin/users", class: "navbar-nav" if current_admin?
+  %div
+    = link_to "about", about_path, class: "navbar-nav"
+  %div
+    = link_to "contact", contact_path, class: "navbar-nav"
+  %div
+    = link_to "my recipes", user_path(current_user), class: "navbar-nav" if current_user

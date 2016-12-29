@@ -11,10 +11,7 @@
     .wrapper
       .flash
         = flash[:success]
-      .log
-        = link_to "Logout", "/logout", method: :delete if current_user
-        = link_to "Login", "/login" if !current_user
-      .admin
-        = 'admin' if current_admin?
+      %div.nav
+        = render partial: 'layouts/nav'
       .main
         = yield
