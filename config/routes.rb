@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
 
   resources :users, only: [:new, :show, :create, :destroy] do
-    resources :recipes, only: [:new, :create, :index, :show] do
-      resources :ingredients, only: [:new, :create, :show]
+    resources :recipes, only: [:new, :create, :index, :show, :edit, :update] do
+      resources :ingredients, only: [:index, :show, :new, :create]
       resources :directions, only: [:new, :create, :show]
     end
   end

@@ -10,16 +10,9 @@ describe "User can create a recipe" do
     fill_in "description", with: "best food on earth"
     click_on('Create new recipe')
 
-    # fill_in "description", with: "delicious"
-    # click_on('add direction')
-    #
-    # fill_in "name", with: "chocolate"
-    # fill_in "amount", with: 100
-    # click_on('Add Ingredient')
-
     recipe = Recipe.find_by(title: "Puppy Chow")
 
-    expect(current_path).to eq(user_recipe_path(user, recipe))
+    expect(current_path).to eq(edit_user_recipe_path(user, recipe))
     expect(page).to have_content("Puppy Chow")
   end
 
