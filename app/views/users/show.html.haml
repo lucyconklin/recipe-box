@@ -5,4 +5,4 @@
 %ul
   - @user.recipes.each do |recipe|
     %li
-      = recipe.title
+      = link_to recipe.title, user_recipe_path(@user, recipe)

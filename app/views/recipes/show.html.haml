@@ -4,6 +4,8 @@
 %h2
   = @recipe.description
 
-= render :partial => 'recipes/ingredient'
-
-= render :partial => 'recipes/direction'
+%ul
+  - @recipe.ingredients.each do |ingredient|
+    %li
+      = ingredient.amount
+      = ingredient.name

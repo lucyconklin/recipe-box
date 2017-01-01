@@ -9,9 +9,12 @@
     = javascript_include_tag 'application'
   %body
     .wrapper
-      .flash
-        = flash[:success]
       %div.nav
         = render partial: 'layouts/nav'
+      .flash
+        = flash[:success]
       .main
         = yield
+      %div.skew
+      %div.footer
+        = render partial: 'layouts/footer'

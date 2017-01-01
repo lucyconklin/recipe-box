@@ -1,0 +1,22 @@
+= form_for [@user, @recipe] do |f|
+  .form-group
+    = f.text_field :title, class: 'form-control', placeholder: 'title'
+  .form-group
+    = f.text_field :description, class: 'form-control', placeholder: 'description'
+  .form-group
+    = f.submit 'done editing', class: "form-control button-submit"
+
+%ul
+  - @recipe.ingredients.each do |ingredient|
+    %li
+      = ingredient.amount
+      = ingredient.name
+
+= render :partial => 'recipes/ingredient'
+
+%ol
+  - @recipe.directions.each do |direction|
+    %li
+      = direction.description
+
+= render :partial => 'recipes/direction'
