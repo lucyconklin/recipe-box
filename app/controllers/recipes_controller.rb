@@ -30,6 +30,8 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
     @ingredient = Ingredient.new()
+    @directions = @recipe.directions
+    @direction = Direction.new()
   end
 
   def update

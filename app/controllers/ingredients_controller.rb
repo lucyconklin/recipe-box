@@ -18,7 +18,8 @@ class IngredientsController < ApplicationController
     if @ingredient.save
       redirect_to edit_user_recipe_path(@recipe.user, @recipe)
     else
-      render :new
+      @errors = 
+      redirect_to edit_user_recipe_path(@recipe.user, @recipe)
     end
   end
 

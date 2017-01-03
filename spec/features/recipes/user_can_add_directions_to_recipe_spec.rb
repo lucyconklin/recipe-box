@@ -16,26 +16,16 @@ describe "User creates recipe" do
     @recipe = Recipe.first
   end
   scenario "after a user creates a recipe they can add ingredient" do
-    fill_in "name", with: "chocolate chips"
-    fill_in "amount", with: "12 oz"
-    click_on "add ingredient"
+    fill_in "description", with: "mix all ingredients together"
+    click_on "add direction"
 
     click_on 'done editing'
 
     expect(page).to have_content("Puppy Chow")
     expect(page).not_to have_content("done editing")
-    expect(page).to have_content("chocolate chips")
   end
 
   scenario "a user cannot submit a blank or incomplete ingredient" do
-    fill_in "name", with: nil
-    fill_in "amount", with: "12 oz"
-    click_on "add ingredient"
-
-    click_on 'done editing'
-
-    expect(page).to have_content("Puppy Chow")
-    expect(page).to have_content("name cannot be blank")
-    expect(page).to have_content("done editing")
+    skip
   end
 end

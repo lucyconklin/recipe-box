@@ -6,3 +6,5 @@
   - @user.recipes.each do |recipe|
     %li
       = link_to recipe.title, user_recipe_path(@user, recipe)
+%div.form-group
+  = link_to 'add a new recipe', new_user_recipe_path(@user), class: "button button-submit form-control"

@@ -1,0 +1,17 @@
+%div.recipe
+  %h2.recipe-title
+    = @recipe.title
+  %h3.recipe-description
+    = @recipe.description
+  %div.row
+    %div.col-md-4
+      %ul.ingredients
+        - @recipe.ingredients.each do |ingredient|
+          %li.ingredient
+            = ingredient.amount
+            = ingredient.name
+    %div.col-md-8
+      %ol.directions
+        - @recipe.directions.each do |direction|
+          %li.direction
+            = direction.description

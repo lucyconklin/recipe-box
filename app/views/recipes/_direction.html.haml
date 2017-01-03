@@ -1,5 +1,5 @@
-= form_for user_recipe_directions_path(@recipe.user, @recipe) do |f|
+= form_for [@recipe.user, @recipe, @direction] do |f|
   .form-group
-    = f.text_field :description, class: 'form-control', placeholder: 'description'
+    = f.text_field :description, class: 'form-control', placeholder: 'direction'
   .form-group
     = f.submit 'add direction', class: "form-control button-submit"

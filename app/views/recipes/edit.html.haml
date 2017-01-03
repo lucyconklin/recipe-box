@@ -1,22 +1,8 @@
-= form_for [@user, @recipe] do |f|
-  .form-group
-    = f.text_field :title, class: 'form-control', placeholder: 'title'
-  .form-group
-    = f.text_field :description, class: 'form-control', placeholder: 'description'
-  .form-group
-    = f.submit 'done editing', class: "form-control button-submit"
+= render :partial => 'shared/errors', locals: { target: @recipe }
 
-%ul
-  - @recipe.ingredients.each do |ingredient|
-    %li
-      = ingredient.amount
-      = ingredient.name
+= render :partial => 'recipe'
 
 = render :partial => 'recipes/ingredient'
-
-%ol
-  - @recipe.directions.each do |direction|
-    %li
-      = direction.description
-
 = render :partial => 'recipes/direction'
+%div.form-group
+  = link_to  'done editing', user_recipe_path(@recipe), class: "form-control button-submit text-center"
